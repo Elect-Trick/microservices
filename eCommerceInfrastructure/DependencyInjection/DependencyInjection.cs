@@ -1,0 +1,17 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace eCommerceInfrastructure.DependencyInjection;
+   
+public static class DependencyInjection
+{
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    {//Allows us to inject services to the IoC container, Infrastructure services often include data access, caching and other low level components.
+     //TODO
+        return services;
+    }
+}
