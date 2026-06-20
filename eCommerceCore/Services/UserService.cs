@@ -35,11 +35,14 @@ namespace eCommerceCore.Services
 
         public async Task<AuthenticationResponse?> RegisterUser(RegisterUserDTO registerRequest)
         {
+            
+            
             ApplicationUser user = new ApplicationUser()
             {
-                Id = 1,
                 Email = registerRequest.Email,
-                Name = "Njabulo Majenje",
+                Name = registerRequest.Name,
+                Gender = registerRequest.Gender,
+                Password = registerRequest.Password,
 
             };
 
