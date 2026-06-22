@@ -10,12 +10,12 @@ namespace eCommerceAPI.Controller
 {
     [ApiController]
     [Route("api/[controller]/")   ]
-    public class UserController : ControllerBase
+    public class AuthController : ControllerBase
     {
         private readonly IUserService _userService;
         private readonly IValidator<LoginDTO> _loginValidator;
         private readonly IValidator<RegisterUserDTO> _registrationValidator;
-        public UserController(IUserService userService, IValidator<LoginDTO> loginValidator, IValidator<RegisterUserDTO> registrationValidator)
+        public AuthController(IUserService userService, IValidator<LoginDTO> loginValidator, IValidator<RegisterUserDTO> registrationValidator)
         {
             _userService = userService;
             _loginValidator = loginValidator;
@@ -84,6 +84,7 @@ namespace eCommerceAPI.Controller
             {
                 return BadRequest("Invalid Login data passed");
             }
+
             AuthenticationResponse? response = await _userService.Login(loginRequest);
 
             if (response == null || response.Sucess == false) {
